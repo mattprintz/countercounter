@@ -71,9 +71,11 @@ def calculate(number):
 
 def total(count):
     count = int(count)
-    i = 0
+    i = 1
     total = 0
-    while i < count:
+    while i <= count:
+        if i % 1000 == 0:
+            print i
         total += calculate(i)
         i += 1
     return total
