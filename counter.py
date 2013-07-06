@@ -65,7 +65,7 @@ def calculate(number):
         sets.append(token[-3:])
         token = token[:-3]
     sets.reverse()
-    syls += (2 * (len(sets) - 1)) # thousand, million, billion, trillion = 2 sylables * set
+    syls += (2 * (len([s for s in sets[0:-2] if s != "000"]))) # thousand, million, billion, trillion = 2 sylables * set
     syls += sum(map(parse_set, sets))
     return syls
 
