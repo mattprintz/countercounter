@@ -71,7 +71,11 @@ def calculate(number):
 
 def total(count):
     count = int(count)
-    total = sum(map(calculate, xrange(1, count)))
+    i = 0
+    total = 0
+    while i < count:
+        total += calculate(i)
+        i += 1
     return total
 
 num = argv[1]
